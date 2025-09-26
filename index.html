@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD SYSTEM</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+  <body>
+
+    <section>
+      <div class="container bg-info rounded-4 p-3 my-4">
+        <h1 class="text-center my-4">CRUD SYSTEM</h1>
+
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            id="productName"
+            placeholder=" "
+          />
+          <label for="productName">Product Name</label>
+          <small id="nameError" class="fw-bold"></small>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="number"
+            class="form-control"
+            id="productPrice"
+            placeholder=" "
+          />
+          <label for="productPrice">Product Price</label>
+          <small id="priceError" class="fw-bold"></small>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            list="cat"
+            type="text"
+            class="form-control"
+            id="productCategory"
+            placeholder=" "
+          />
+          <label for="productCategory">Product Category</label>
+          <datalist id="cat">
+            <option value="TV" />
+            <option value="Mobile" />
+            <option value="Laptop" />
+          </datalist>
+         <small id="categoryError" class="fw-bold"></small>
+        </div>
+
+        <div class="form-floating mb-3">
+          <textarea
+            class="form-control"
+            placeholder=" "
+            id="productDescription"
+            style="height: 100px"
+          ></textarea>
+          <label for="productDescription">Product Description</label>
+         <small id="descError" class="fw-bold"></small>
+
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="file"
+            class="form-control"
+            id="productImage"
+            placeholder=" "
+          />
+          <label for="productImage">Product Image</label>
+        </div>
+
+        <button onclick="addProduct()" id="btnAdd" type="button" class="btn btn-primary btn-lg">
+          Add Product
+        </button>
+        <button onclick="updateData()" type="button" id="btnUpdate" class="btn btn-success btn-lg d-none">
+          Update Product
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <input
+          type="search" id="searchInput" oninput="searchData()"
+          class="form-control w-50 mx-auto my-5 p-2 rounded-3 fw-bold text-dark"
+          placeholder="Search By Name..."
+        />
+
+        <div class="row mx-auto g-4" id="rowData">
+        
+        </div>
+      </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
